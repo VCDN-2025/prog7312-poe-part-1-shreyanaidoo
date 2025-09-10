@@ -1,0 +1,48 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* Make top and bottom banner images stretch full width and have the same height */
+.full-width-img {
+    width: 100%; /* stretch edge-to-edge */
+    height: 300px; /* fixed height for both top and bottom images */
+    display: block; /* remove small spacing below images */
+    object-fit: cover; /* fill the space without distortion */
+}
+
+/* Center the main menu buttons */
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers buttons horizontally */
+    gap: 10px; /* spacing between buttons */
+}
+
+    /* make buttons uniform size */
+    .menu-container .btn {
+        width: 250px; /* all buttons same width */
+    }
+/*<!-- Referencing -->
+<!--Microsoft Learn, 2025. LinkedList<T> Class [Online]. Available at:<https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlist-1?view=net-9.0> [Acessed on 01 September 2025]-->
+<!--wheretostay,2020. Durban Beachfront Accommodation[Electronic Print]. Available at:<https://www.wheretostay.co.za/town/durban-beachfront-cbd/accommodation> [Acessed on 05 September 2025]-->
+<!--IStock,2019. Durban Beachfront [Electronic Print]. Available at:<https://www.istockphoto.com/search/2/image-film?phrase=durban+beach> [Acessed on 05 September 2025]-->
+<!--Facebook, 2012. EThekwini Municipality [Electronic Print]. Available at:<https://www.facebook.com/eThekwiniM/> [Acessed on 05 September 2025]-->*/

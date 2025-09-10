@@ -1,0 +1,88 @@
+﻿@model Municipality_Service_App.Models.IssueViewModel
+
+@{
+    ViewData["Title"] = "Report an Issue";
+}
+
+<!-- Top Banner Image -->
+<img src="~/images/styling_2.jpg" class="full-width-img mb-3" alt="Top Banner" />
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-3">Log an Issue</h2>
+
+    <form id="reportForm" asp-action="ReportIssue" asp-controller="MainMenu" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-2">
+
+        <div>
+            <label asp-for="Location" class="form-label"></label>
+            <input asp-for="Location" class="form-field form-control" />
+        </div>
+
+        <div>
+            <label asp-for="Category" class="form-label"></label>
+            <select asp-for="Category" class="form-field form-select">
+                <option value="">-- Select --</option>
+                <option>Road</option>
+                <option>Water</option>
+                <option>Electricity</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div>
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-field form-control"></textarea>
+        </div>
+
+        <div>
+            <label>File</label>
+            <input type="file" name="file" class="form-field form-control" />
+        </div>
+
+        <div class="my-2">
+            <progress id="progressBar" value="0" max="100" style="width:100%;"></progress>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Bottom Banner Image -->
+<img src="~/images/styling_3.jpg" class="full-width-img mt-3" alt="Bottom Banner" />
+
+<script>
+    // Progress bar logic
+    const fields = document.querySelectorAll(".form-field");
+    const progressBar = document.getElementById("progressBar");
+
+    fields.forEach(field => {
+        field.addEventListener("input", updateProgress);
+        field.addEventListener("change", updateProgress);
+    });
+
+    function updateProgress() {
+        let filled = 0;
+        fields.forEach(f => {
+            if (f.type === "file") {
+                if (f.files.length > 0) filled++;
+            } else {
+                if (f.value.trim() !== "") filled++;
+            }
+        });
+
+        let percent = (filled / fields.length) * 100;
+        progressBar.value = percent;
+    }
+
+    // Popup on submit
+    document.getElementById("reportForm").addEventListener("submit", function () {
+        alert("Report logged successfully!");
+    });
+</script>
+
+<!-- Referencing -->
+<!--Microsoft Learn, 2025. LinkedList<T> Class [Online]. Available at:<https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlist-1?view=net-9.0> [Acessed on 01 September 2025]-->
+<!--wheretostay,2020. Durban Beachfront Accommodation[Electronic Print]. Available at:<https://www.wheretostay.co.za/town/durban-beachfront-cbd/accommodation> [Acessed on 05 September 2025]-->
+<!--IStock,2019. Durban Beachfront [Electronic Print]. Available at:<https://www.istockphoto.com/search/2/image-film?phrase=durban+beach> [Acessed on 05 September 2025]-->
+<!--Facebook, 2012. EThekwini Municipality [Electronic Print]. Available at:<https://www.facebook.com/eThekwiniM/> [Acessed on 05 September 2025]-->
+
