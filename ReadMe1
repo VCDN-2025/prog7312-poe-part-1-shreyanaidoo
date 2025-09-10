@@ -1,0 +1,91 @@
+# Municipality Service App
+
+The **Municipality Service App** is a web-based application built using **ASP.NET Core MVC**.  
+It allows residents to log and report service-related issues such as road, water, and electricity faults directly to the municipality.  
+
+---
+
+##  Features
+- Report issues with location, category, description, and attachments.
+- Progress bar indicating completion of the issue logging form.
+- File upload support.
+- Popup confirmation when submitting an issue.
+- Navigation with municipality branding (logo).
+- Styled UI with consistent colors and layout.
+
+---
+
+## Prerequisites
+Before running this project, ensure you have installed:
+
+- [.NET 6.0 SDK or later](https://dotnet.microsoft.com/download)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/) or [Visual Studio Code](https://code.visualstudio.com/)
+- SQL Server (if database integration is enabled)
+- Git (optional, for cloning repository)
+
+---
+
+## How to Compile and Run
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/prog7312-poe-part-1-shreyanaidoo/Municipality_Service_App.git
+cd Municipality_Service_App
+2. Open in Visual Studio
+Open Municipality_Service_App.sln in Visual Studio.
+
+3. Restore Dependencies
+Run the following in the Package Manager Console or terminal:
+
+bash
+Copy code
+dotnet restore
+4. Build the Project
+In Visual Studio: Build > Build Solution
+
+Or in terminal:
+
+bash
+Copy code
+dotnet build
+5. Run the Application
+In Visual Studio: Press F5 or click Run
+
+Or in terminal:
+
+bash
+Copy code
+dotnet run
+The app will start on https://localhost:5001 (or another available port).
+
+How to Use
+Open the application in your browser.
+
+Navigate to Report an Issue.
+
+Fill in the required fields:
+
+Location
+
+Category (Road, Water, Electricity, Other)
+
+Description
+
+Upload a file (optional)
+
+Watch the progress bar as you complete fields.
+
+Click Submit.
+
+A popup will confirm that the issue has been logged successfully.
+
+Project Structure
+graphql
+Copy code
+Municipality_Service_App/
+│-- Controllers/        # MVC Controllers
+│-- Models/             # ViewModels and Data Models
+│-- Views/              # Razor Views (.cshtml)
+│-- wwwroot/            # Static files (CSS, JS, Images)
+│-- appsettings.json    # Configuration settings
+│-- Program.cs          # Application entry point
